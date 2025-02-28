@@ -5,9 +5,13 @@ import headShot from '../photos/headshot.jpeg';
 export default function Home() {
   return (
     <div>
-      <h1 className="text-4xl font-bold">Hi I&apos;m Harrison</h1>
+      <h1 className="text-3xl">
+        Hey, I&apos;m
+        <br />
+        Harrison Rogers 👋
+      </h1>
       <Link href="/about">
-        <div className="relative w-48 h-48 overflow-hidden rounded-full mx-auto sm:float-right sm:ml-5 sm:mb-5 lg:mt-5 mt-0 lg:mb-5 mb-10 hover:scale-105 transition-all duration-300">
+        <div className="relative w-48 h-48 overflow-hidden rounded-full mx-auto sm:float-right sm:ml-5 sm:mb-5 lg:mt-2 mt-5 lg:mb-5 mb-10 hover:scale-105 transition-all duration-300">
           <Image
             className="object-cover object-[center_top]"
             src={headShot}
@@ -19,6 +23,19 @@ export default function Home() {
           />
         </div>
       </Link>
+
+      <p className="mt-7">
+        I&apos;m a frontend developer with a full-stack background, specializing
+        in React, Next.js, TypeScript, and Tailwind CSS. I have a deep passion
+        for Web3 development, building smart contracts with Solidity, and
+        creating dynamic, interactive frontends that bridge users to blockchain
+        technology.
+      </p>
+      <p className="mt-5">
+        I love solving complex problems, experimenting with new technologies,
+        and pushing the boundaries of what&apos;s possible on the web. Check out
+        my projects, learn more about me, or get in touch!
+      </p>
     </div>
   );
 }

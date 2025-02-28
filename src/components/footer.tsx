@@ -4,6 +4,7 @@ import React from 'react';
 import { FaXTwitter, FaGithub, FaLinkedinIn, FaRss } from 'react-icons/fa6';
 import { IoIosMail } from 'react-icons/io';
 import { metaData, socialLinks } from '@/app/config';
+import Link from 'next/link';
 
 const YEAR = new Date().getFullYear();
 
@@ -15,9 +16,9 @@ function SocialLink({
   icon: React.ElementType;
 }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <Link href={href} target="_blank" rel="noopener noreferrer">
       <Icon />
-    </a>
+    </Link>
   );
 }
 
@@ -28,9 +29,9 @@ function SocialLinks() {
       <SocialLink href={socialLinks.github} icon={FaGithub} />
       <SocialLink href={socialLinks.linkedin} icon={FaLinkedinIn} />
       <SocialLink href={socialLinks.email} icon={IoIosMail} />
-      <a href="/sitemap.xml" target="_self">
+      <Link href="/sitemap.xml" target="_self">
         <FaRss />
-      </a>
+      </Link>
     </div>
   );
 }
@@ -39,22 +40,14 @@ export default function Footer() {
   return (
     <small className="block lg:mt-24 mt-16 text-[#1C1C1C] dark:text-[#D4D4D4]">
       <time>© {YEAR}</time>{' '}
-      <a
+      <Link
         className="no-underline"
         href={socialLinks.twitter}
         target="_blank"
         rel="noopener noreferrer"
       >
         {metaData.title}
-      </a>
-      <style jsx>{`
-        @media screen and (max-width: 480px) {
-          article {
-            padding-top: 2rem;
-            padding-bottom: 4rem;
-          }
-        }
-      `}</style>
+      </Link>
       <SocialLinks />
     </small>
   );

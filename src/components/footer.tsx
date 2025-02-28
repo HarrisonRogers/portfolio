@@ -1,7 +1,5 @@
-'use client';
-
 import React from 'react';
-import { FaXTwitter, FaGithub, FaLinkedinIn, FaRss } from 'react-icons/fa6';
+import { FaXTwitter, FaGithub, FaLinkedinIn } from 'react-icons/fa6';
 import { IoIosMail } from 'react-icons/io';
 import { metaData, socialLinks } from '@/app/config';
 import Link from 'next/link';
@@ -29,9 +27,6 @@ function SocialLinks() {
       <SocialLink href={socialLinks.github} icon={FaGithub} />
       <SocialLink href={socialLinks.linkedin} icon={FaLinkedinIn} />
       <SocialLink href={socialLinks.email} icon={IoIosMail} />
-      <Link href="/sitemap.xml" target="_self">
-        <FaRss />
-      </Link>
     </div>
   );
 }

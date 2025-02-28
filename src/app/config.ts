@@ -7,8 +7,8 @@ export const metaData = {
 };
 
 export const socialLinks = {
-  twitter: 'https://x.com/harrisonrogers',
+  twitter: 'https://x.com/0xRoge',
   github: 'https://github.com/harrisonrogers',
-  linkedin: 'https://www.linkedin.com/in/harrisonrogers/',
-  email: 'mailto:harrison@harrisonrogers.com',
+  linkedin: 'https://www.linkedin.com/in/harrison-euan-rogers/',
+  email: 'mailto:harrison.rogers05@gmail.com',
 };

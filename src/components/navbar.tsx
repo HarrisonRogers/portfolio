@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { metaData } from '@/app/config';
-
+import { ModeToggle } from '@/components/modeToggle';
 const navItems = {
   '/about': { name: 'About' },
   '/projects': { name: 'Projects' },
@@ -27,6 +27,7 @@ function Navbar() {
               {name}
             </Link>
           ))}
+          <ModeToggle />
         </div>
       </div>
     </nav>

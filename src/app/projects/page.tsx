@@ -13,7 +13,7 @@ function ProjectsPage() {
             <Link
               key={index}
               href={project.url}
-              className="flex flex-col space-y-1 mb-5 transition-opacity duration-200 hover:opacity-80"
+              className="flex flex-col space-y-1 mb-5 transition-all duration-200 hover:scale-101"
               target="_blank"
               rel="noopener noreferrer"
             >

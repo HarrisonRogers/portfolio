@@ -1,4 +1,10 @@
 import React from 'react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Me',
+  description: 'Learn about me, who I am and my tech stack',
+};
 
 const techStack = {
   frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],

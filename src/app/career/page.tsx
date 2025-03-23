@@ -2,6 +2,12 @@ import React from 'react';
 import dayjs from 'dayjs';
 import { careers } from './careers';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Career',
+  description: 'My career history',
+};
 
 function CareerPage() {
   const formatDate = (dateString: string): string => {

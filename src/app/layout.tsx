@@ -4,6 +4,7 @@ import './globals.css';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
+import Analytics from '@/components/analytics';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -17,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Harrison Rogers Software Developer',
-  description: 'Harrison Rogers Software Developer',
+  description:
+    'Hi, I am Harrison Rogers a Software Engineer based in New Zealand. I love building sites and applications with React.ts, Next.js, Solidity and other web3 and web2 technologies.',
 };
 
 export default function RootLayout({
@@ -27,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Analytics />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40`}
       >

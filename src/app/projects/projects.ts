@@ -6,12 +6,6 @@ export const projects = [
     url: 'https://github.com/HarrisonRogers/Kiwi-Crypto',
   },
   {
-    title: 'Optimistic Weather',
-    year: '2024',
-    description: 'Provides tailored events depending on the weather',
-    url: 'https://github.com/tohora-2024/optimisticweather/tree/main',
-  },
-  {
     title: 'Jobify',
     year: '2024',
     description: 'Job tracking website',

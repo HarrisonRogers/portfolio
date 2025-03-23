@@ -25,7 +25,7 @@ export default function Home() {
       </Link>
 
       <p className="mt-7">
-        I&apos;m a frontend developer with a full-stack background, specializing
+        I&apos;m a Software Engineer with a full-stack background, specializing
         in React, Next.js, TypeScript, and Tailwind CSS. I have a deep passion
         for Web3 development, building smart contracts with Solidity, and
         creating dynamic, interactive frontends that bridge users to blockchain

@@ -22,7 +22,7 @@ function Navbar() {
             <Link
               key={path}
               href={path}
-              className="transition hover:opacity-85 text-white"
+              className="transition hover:opacity-85 "
             >
               {name}
             </Link>

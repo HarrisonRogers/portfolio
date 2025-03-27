@@ -1,5 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
+import Card from '@/components/ui/card';
 
 export const metadata: Metadata = {
   title: 'About Me',
@@ -11,6 +12,29 @@ const techStack = {
   backend: ['Supabase', 'Prisma', 'GraphQL'],
   web3: ['Solidity', 'Smart Contracts'],
   paymentsAndApis: ['Stripe', 'Third-party integrations'],
+};
+
+type TechStackCardProps = {
+  title: string;
+  icon: string;
+  technologies: string[];
+};
+
+const TechStackCard = ({ title, icon, technologies }: TechStackCardProps) => {
+  return (
+    <Card>
+      <div className="p-6">
+        <h2 className="text-lg font-semibold">
+          {icon} {title}
+        </h2>
+        <ul className="list-disc pl-6 mt-2">
+          {technologies.map((tech, index) => (
+            <li key={index}>{tech}</li>
+          ))}
+        </ul>
+      </div>
+    </Card>
+  );
 };
 
 function AboutPage() {
@@ -30,38 +54,22 @@ function AboutPage() {
         high-performance applications. My tech stack includes:
       </p>
       <div className="mt-4 space-y-4">
-        <div>
-          <h2 className="text-lg font-semibold">🚀 Frontend</h2>
-          <ul className="list-disc pl-6">
-            {techStack.frontend.map((tech, index) => (
-              <li key={index}>{tech}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-lg font-semibold">🛠 Backend</h2>
-          <ul className="list-disc pl-6">
-            {techStack.backend.map((tech, index) => (
-              <li key={index}>{tech}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-lg font-semibold">🔗 Web3</h2>
-          <ul className="list-disc pl-6">
-            {techStack.web3.map((tech, index) => (
-              <li key={index}>{tech}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-lg font-semibold">💳 Payments & APIs</h2>
-          <ul className="list-disc pl-6">
-            {techStack.paymentsAndApis.map((tech, index) => (
-              <li key={index}>{tech}</li>
-            ))}
-          </ul>
-        </div>
+        <TechStackCard
+          title="Frontend"
+          icon="🚀"
+          technologies={techStack.frontend}
+        />
+        <TechStackCard
+          title="Backend"
+          icon="🛠"
+          technologies={techStack.backend}
+        />
+        <TechStackCard title="Web3" icon="🔗" technologies={techStack.web3} />
+        <TechStackCard
+          title="Payments & APIs"
+          icon="💳"
+          technologies={techStack.paymentsAndApis}
+        />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Moon, Sun, Laptop } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
@@ -8,6 +8,11 @@ import { Button } from '@/components/ui/button';
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const cycleTheme = (): void => {
     if (theme === 'light') {
@@ -25,12 +30,13 @@ export function ModeToggle() {
       size="icon"
       onClick={cycleTheme}
       className="cursor-pointer border-none hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none relative"
-      title={`Current theme: ${theme || 'system'}`}
+      title={mounted ? `Current theme: ${theme || 'system'}` : 'Theme toggle'}
+      suppressHydrationWarning
     >
       {/* Light mode icon */}
       <Sun
         className={`h-[1.2rem] w-[1.2rem] transition-all absolute ${
-          theme === 'light'
+          mounted && theme === 'light'
             ? 'scale-100 rotate-0 opacity-100'
             : 'scale-0 rotate-90 opacity-0'
         }`}
@@ -39,7 +45,7 @@ export function ModeToggle() {
       {/* Dark mode icon */}
       <Moon
         className={`h-[1.2rem] w-[1.2rem] transition-all absolute ${
-          theme === 'dark'
+          mounted && theme === 'dark'
             ? 'scale-100 rotate-0 opacity-100'
             : 'scale-0 rotate-90 opacity-0'
         }`}
@@ -48,7 +54,7 @@ export function ModeToggle() {
       {/* System mode icon */}
       <Laptop
         className={`h-[1.2rem] w-[1.2rem] transition-all absolute ${
-          theme === 'system' || !theme
+          mounted && (theme === 'system' || !theme)
             ? 'scale-100 rotate-0 opacity-100'
             : 'scale-0 rotate-90 opacity-0'
         }`}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import headShot from '../photos/headshot.jpeg';
+import headShot from '../assets/headshot.jpeg';
 
 export default function Home() {
   return (

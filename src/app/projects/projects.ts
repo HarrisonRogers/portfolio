@@ -1,5 +1,11 @@
 export const projects = [
   {
+    title: 'Site Whiz',
+    year: '2025',
+    description: 'An AI chat bot to read designer and building plans',
+    url: 'https://site-whiz.vercel.app/',
+  },
+  {
     title: 'Kiwi Crypto',
     year: '2024',
     description: 'Allows users to track crypto prices in NZD',

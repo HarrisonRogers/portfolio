@@ -54,7 +54,7 @@ function AboutPage() {
         I love working with modern technologies to build scalable,
         high-performance applications. My tech stack includes:
       </p>
-      <div className="mt-4 space-y-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         <TechStackCard
           title="Frontend"
           icon="🚀"

@@ -26,10 +26,9 @@ export default function Home() {
 
       <p className="mt-7">
         I&apos;m a Software Engineer with a full-stack background, specializing
-        in React, Next.js, TypeScript, and Tailwind CSS. I have a deep passion
-        for Web3 development, building smart contracts with Solidity, and
-        creating dynamic, interactive frontends that bridge users to blockchain
-        technology.
+        in React, Next.js and TypeScript. I have a deep passion for Web3 and AI
+        development. I build smart contracts with Solidity, and create dynamic,
+        interactive frontends that bridge users to blockchain technology and AI.
       </p>
       <p className="mt-5">
         I love solving complex problems, experimenting with new technologies,

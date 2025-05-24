@@ -8,9 +8,10 @@ export const metadata: Metadata = {
 };
 
 const techStack = {
-  frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
-  backend: ['Supabase', 'Prisma', 'GraphQL'],
-  web3: ['Solidity', 'Smart Contracts'],
+  frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/ui'],
+  backend: ['Supabase', 'Prisma', 'GraphQL', 'PostgreSQL', 'SQLite'],
+  web3: ['Solidity', 'Smart Contracts', 'Wagmi', 'Ethereum', 'Base'],
+  ai: ['OpenAI', 'Vercel AI SDK', 'Tool Calling'],
   paymentsAndApis: ['Stripe', 'Third-party integrations'],
 };
 
@@ -53,7 +54,7 @@ function AboutPage() {
         I love working with modern technologies to build scalable,
         high-performance applications. My tech stack includes:
       </p>
-      <div className="mt-4 space-y-4">
+      <div className="mt-4 space-y-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         <TechStackCard
           title="Frontend"
           icon="🚀"
@@ -65,6 +66,7 @@ function AboutPage() {
           technologies={techStack.backend}
         />
         <TechStackCard title="Web3" icon="🔗" technologies={techStack.web3} />
+        <TechStackCard title="AI" icon="🤖" technologies={techStack.ai} />
         <TechStackCard
           title="Payments & APIs"
           icon="💳"

@@ -18,7 +18,7 @@ function ProjectsPage() {
           .map((project, index) => (
             <Link
               key={index}
-              href={project.url}
+              href={project.url || project.sourceCode}
               className="flex flex-col space-y-1 mb-5 transition hover:opacity-85"
               target="_blank"
               rel="noopener noreferrer"
@@ -31,6 +31,11 @@ function ProjectsPage() {
                   <span className="text-sm text-neutral-500 dark:text-neutral-400">
                     ({project.year})
                   </span>
+                  {project.sourceCode && !project.url && (
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                      (Source Code)
+                    </span>
+                  )}
                 </div>
                 <p className="text-neutral-600 dark:text-neutral-400 tracking-tight">
                   {project.description}

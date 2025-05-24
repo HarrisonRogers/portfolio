@@ -43,12 +43,12 @@ function AboutPage() {
     <div>
       <h1 className="text-3xl mb-7">About</h1>
       <p>
-        After seeing everyone else take the traditional university path, I
-        decided to dive deep into the world of coding and carve out my own
-        journey. Instead of lectures and textbooks, I spent my time in the
-        console, learning by building. Now, at 18 years old, with a strong
-        foundation from Dev Academy, I&apos;m focused on making an
-        impact—especially in Web3 and blockchain development.
+        I chose to forge my own path in software development rather than follow
+        the traditional university route. At 18, I built a solid foundation at
+        Dev Academy and have since been honing my skills at First Table. I
+        thrive in hands-on learning—spending my days in the console, building
+        real projects—and I&apos;m passionate about driving innovation in Web3
+        and blockchain technologies.
       </p>
       <p className="mt-4">
         I love working with modern technologies to build scalable,

@@ -31,9 +31,13 @@ function ProjectsPage() {
                   <span className="text-sm text-neutral-500 dark:text-neutral-400">
                     ({project.year})
                   </span>
-                  {project.sourceCode && !project.url && (
+                  {project.sourceCode && (
                     <span className="text-sm text-neutral-500 dark:text-neutral-400">
-                      (Source Code)
+                      (
+                      <span className="underline underline-offset-2 hover:no-underline">
+                        Source Code
+                      </span>
+                      )
                     </span>
                   )}
                 </div>

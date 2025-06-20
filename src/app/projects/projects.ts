@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: 'Crypto Spy',
+    year: '2025',
+    description: 'crypto tracker chrome extension',
+    url: 'https://chromewebstore.google.com/detail/crypto-spy/coimplobgcaanmehcjcholcjclgacnhm',
+    sourceCode: 'https://github.com/HarrisonRogers/crypto-spy',
+  },
+  {
     title: 'Site Whiz',
     year: '2025',
     description: 'AI chat bot to read construction plans',

@@ -2,9 +2,10 @@ export const projects = [
   {
     title: 'Crypto Spy',
     year: '2025',
-    description: 'crypto tracker chrome extension',
+    description: 'Crypto tracker chrome extension',
     url: 'https://chromewebstore.google.com/detail/crypto-spy/coimplobgcaanmehcjcholcjclgacnhm',
     sourceCode: 'https://github.com/HarrisonRogers/crypto-spy',
+    personal: true,
   },
   {
     title: 'Site Whiz',
@@ -12,6 +13,7 @@ export const projects = [
     description: 'AI chat bot to read construction plans',
     url: 'https://site-whiz.vercel.app/',
     sourceCode: 'https://github.com/HarrisonRogers/site-whiz',
+    personal: true,
   },
   {
     title: 'Kiwi Crypto',
@@ -19,6 +21,7 @@ export const projects = [
     description: 'Track crypto prices in NZD',
     url: '',
     sourceCode: 'https://github.com/HarrisonRogers/Kiwi-Crypto',
+    personal: true,
   },
   {
     title: 'Jobify',
@@ -26,6 +29,7 @@ export const projects = [
     description: 'Job tracking website',
     url: '',
     sourceCode: 'https://github.com/HarrisonRogers/jobify',
+    personal: true,
   },
   {
     title: 'Site Pro',
@@ -33,6 +37,7 @@ export const projects = [
     description: 'Building asset management platform',
     url: '',
     sourceCode: 'https://github.com/HarrisonRogers/SitePro',
+    personal: true,
   },
   {
     title: 'First Table',
@@ -40,6 +45,7 @@ export const projects = [
     description: 'Restaurant booking platform for 50% off meals',
     url: 'https://www.firsttable.co.nz/',
     sourceCode: '',
+    personal: false,
   },
   {
     title: 'Launch Base Tokens',
@@ -47,6 +53,7 @@ export const projects = [
     description: 'Launch sepolia base crypto tokens',
     url: 'https://launch-base-tokens.vercel.app/',
     sourceCode: 'https://github.com/HarrisonRogers/launch-base-tokens',
+    personal: true,
   },
   {
     title: 'Eth Blogs',
@@ -54,5 +61,6 @@ export const projects = [
     description: 'Write blogs and set subscription fees with base',
     url: '',
     sourceCode: 'https://github.com/HarrisonRogers/eth-blogs',
+    personal: true,
   },
 ];

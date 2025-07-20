@@ -1,24 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Card from '@/components/ui/card';
+import techStack, { type TechStackCardProps } from './techStack';
 
 export const metadata: Metadata = {
   title: 'About Me',
   description: 'Learn about me, who I am and my tech stack',
-};
-
-const techStack = {
-  frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/ui'],
-  backend: ['Supabase', 'Prisma', 'GraphQL', 'PostgreSQL', 'SQLite'],
-  web3: ['Solidity', 'Smart Contracts', 'Wagmi', 'Ethereum', 'Base'],
-  ai: ['OpenAI', 'Vercel AI SDK', 'Tool Calling'],
-  paymentsAndApis: ['Stripe', 'Third-party integrations'],
-};
-
-type TechStackCardProps = {
-  title: string;
-  icon: string;
-  technologies: string[];
 };
 
 const TechStackCard = ({ title, icon, technologies }: TechStackCardProps) => {
@@ -55,6 +42,11 @@ function AboutPage() {
         high-performance applications. My tech stack includes:
       </p>
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <TechStackCard
+          title="Languages"
+          icon="🌐"
+          technologies={techStack.languages}
+        />
         <TechStackCard
           title="Frontend"
           icon="🚀"

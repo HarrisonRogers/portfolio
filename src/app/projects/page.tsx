@@ -69,7 +69,12 @@ function ProjectsPage() {
 
   return (
     <div>
-      <h1 className="text-3xl mb-7">Projects</h1>
+      <h1 className="text-3xl mb-7">
+        Projects{' '}
+        <span className="text-gray-500 dark:text-gray-400 text-sm">
+          (some of these may be older and don&apos;t work )
+        </span>
+      </h1>
       {renderProjectList(workProjects, 'Work')}
       {renderProjectList(personalProjects, 'Personal')}
     </div>

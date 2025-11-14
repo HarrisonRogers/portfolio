@@ -3,7 +3,7 @@ export const projects = [
     title: 'Crypto Spy',
     year: '2025',
     description: 'Crypto tracker chrome extension',
-    url: 'https://chromewebstore.google.com/detail/crypto-spy/coimplobgcaanmehcjcholcjclgacnhm',
+    url: 'https://www.cryptospy.app/',
     sourceCode: 'https://github.com/HarrisonRogers/crypto-spy',
     personal: true,
   },

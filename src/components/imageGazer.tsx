@@ -1,86 +1,93 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import { FPS, X_STEPS, Y_STEPS } from '@/lib/constants';
 
 function ImageGazer() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const lastFrameTimeRef = useRef(0);
+  const lastFrameRef = useRef(0);
 
   useEffect(() => {
-    const handlePointerMove = (e: MouseEvent) => {
-      const video = videoRef.current;
-      const container = containerRef.current;
+    if (videoRef.current) {
+      videoRef.current.currentTime = 5.2;
+    }
+  }, []);
 
-      if (!video || !container) return;
+  const handlePointerMove = useCallback((e: MouseEvent) => {
+    const now = performance.now();
+    if (now - lastFrameRef.current < 1000 / FPS) return;
 
-      // Throttle to match video FPS for smoother playback
-      const now = performance.now();
-      if (now - lastFrameTimeRef.current < 1000 / FPS) {
-        return;
-      }
-      lastFrameTimeRef.current = now;
+    lastFrameRef.current = now;
 
-      // Calculate container center position
-      const containerRect = container.getBoundingClientRect();
-      const containerCenterX = containerRect.left + containerRect.width / 2;
-      const containerCenterY = containerRect.top + containerRect.height / 2;
+    const video = videoRef.current;
+    const container = containerRef.current;
+    if (!video || !container) return;
 
-      // Calculate direction from container center to mouse
-      const containerDeltaX = e.clientX - containerCenterX;
-      const containerDeltaY = e.clientY - containerCenterY;
+    // Get the container's position on screen
+    const containerRect = container.getBoundingClientRect();
+    const containerCenterX = containerRect.left + containerRect.width / 2;
+    const containerCenterY = containerRect.top + containerRect.height / 2;
 
-      // Normalize based on container dimensions
-      const maxDistanceX = containerRect.width / 2;
-      const maxDistanceY = containerRect.height / 2;
-      const containerNormalizedX = Math.max(
-        -1,
-        Math.min(1, containerDeltaX / maxDistanceX)
-      );
-      const containerNormalizedY = Math.max(
-        -1,
-        Math.min(1, containerDeltaY / maxDistanceY)
-      );
+    // Calculate direction from container center to mouse
+    const deltaX = e.clientX - containerCenterX;
+    const deltaY = e.clientY - containerCenterY;
 
-      // Map to indices
-      const videoXIndex = Math.round(
-        ((containerNormalizedX + 1) / 2) * (X_STEPS - 1)
-      );
-      const videoYIndex = Math.round(
-        ((containerNormalizedY + 1) / 2) * (Y_STEPS - 1)
-      );
+    // Normalize based on a fixed distance for smooth viewport tracking
+    const maxDistance = 500; // pixels from container center to reach extreme
+    const normalizedX = Math.max(-1, Math.min(1, deltaX / maxDistance));
+    const normalizedY = Math.max(-1, Math.min(1, deltaY / maxDistance));
 
-      // Calculate frame index (row-major order: y * width + x)
-      const frameIndex = videoYIndex * X_STEPS + videoXIndex;
+    // Map to indices (0 to X_STEPS-1, 0 to Y_STEPS-1)
+    const videoXIndex = Math.round(((normalizedX + 1) / 2) * (X_STEPS - 1));
+    const videoYIndex = Math.round(((normalizedY + 1) / 2) * (Y_STEPS - 1));
 
-      // Calculate time for this frame based on FPS
-      const frameTime = frameIndex / FPS;
+    // Calculate frame index (row-major order: y * width + x)
+    const frameIndex = videoYIndex * X_STEPS + videoXIndex;
 
-      // Update video currentTime if it's loaded
-      if (video.readyState >= 2) {
-        // HAVE_CURRENT_DATA or better
-        video.currentTime = frameTime;
-      }
-    };
+    // Calculate time based on FPS (frames are sequential in the video at 60fps)
+    const frameTime = frameIndex / FPS;
 
-    // Add event listener to document for global cursor tracking
+    console.log({
+      cursor: `(${e.clientX}, ${e.clientY})`,
+      containerCenter: `(${containerCenterX.toFixed(
+        0
+      )}, ${containerCenterY.toFixed(0)})`,
+      delta: `(${deltaX.toFixed(0)}, ${deltaY.toFixed(0)})`,
+      normalized: `(${normalizedX.toFixed(2)}, ${normalizedY.toFixed(2)})`,
+      indices: `x=${videoXIndex}, y=${videoYIndex}`,
+      frameIndex: `${frameIndex}/${X_STEPS * Y_STEPS}`,
+      frameTime: `${frameTime.toFixed(3)}s`,
+      formula: `${videoYIndex}*${X_STEPS}+${videoXIndex}=${frameIndex}`,
+    });
+
+    // Update video currentTime if it's loaded
+    if (video.readyState >= 2 && !isNaN(frameTime)) {
+      // HAVE_CURRENT_DATA or better
+      video.currentTime = frameTime;
+    }
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
     document.addEventListener('pointermove', handlePointerMove);
-
     return () => {
       document.removeEventListener('pointermove', handlePointerMove);
     };
-  }, []);
+  }, [handlePointerMove]);
 
   return (
     <div
       ref={containerRef}
-      className="w-full h-full bg-black mx-auto flex items-center justify-center"
+      className="size-full bg-black mx-auto flex items-center justify-center"
     >
       <video
         ref={videoRef}
         src="/harrison-big.mp4"
         preload="auto"
+        defaultValue={5}
         muted
         className="block w-full max-w-600px border-radius-20px overflow-hidden"
       />

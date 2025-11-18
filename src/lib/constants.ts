@@ -1,5 +1,5 @@
-export const X_STEPS = 10;
-export const Y_STEPS = 10;
+export const X_STEPS = 24;
+export const Y_STEPS = 26;
 export const ROTATE_BOUND = 20;
 export const PUPIL_BOUND = 15;
 export const PREFIX = 'harrison';

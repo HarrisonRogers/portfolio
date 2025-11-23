@@ -68,7 +68,7 @@ function ImageGazer() {
   return (
     <div
       ref={containerRef}
-      className="size-full mx-auto flex items-center justify-center"
+      className="size-full bg-secondary mx-auto flex items-center justify-center"
     >
       <video
         ref={videoRef}

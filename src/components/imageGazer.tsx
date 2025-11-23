@@ -34,7 +34,7 @@ function ImageGazer() {
     const deltaY = e.clientY - containerCenterY;
 
     // Normalize based on a fixed distance for smooth viewport tracking
-    const maxDistance = 500; // pixels from container center to reach extreme
+    const maxDistance = 1000; // pixels from container center to reach extreme
     const normalizedX = Math.max(-1, Math.min(1, deltaX / maxDistance));
     const normalizedY = Math.max(-1, Math.min(1, deltaY / maxDistance));
 
@@ -48,21 +48,8 @@ function ImageGazer() {
     // Calculate time based on FPS (frames are sequential in the video at 60fps)
     const frameTime = frameIndex / FPS;
 
-    console.log({
-      cursor: `(${e.clientX}, ${e.clientY})`,
-      containerCenter: `(${containerCenterX.toFixed(
-        0
-      )}, ${containerCenterY.toFixed(0)})`,
-      delta: `(${deltaX.toFixed(0)}, ${deltaY.toFixed(0)})`,
-      normalized: `(${normalizedX.toFixed(2)}, ${normalizedY.toFixed(2)})`,
-      indices: `x=${videoXIndex}, y=${videoYIndex}`,
-      frameIndex: `${frameIndex}/${X_STEPS * Y_STEPS}`,
-      frameTime: `${frameTime.toFixed(3)}s`,
-      formula: `${videoYIndex}*${X_STEPS}+${videoXIndex}=${frameIndex}`,
-    });
-
     // Update video currentTime if it's loaded
-    if (video.readyState >= 2 && !isNaN(frameTime)) {
+    if (video && video.readyState >= 2) {
       // HAVE_CURRENT_DATA or better
       video.currentTime = frameTime;
     }

@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Harrison Rogers Software Developer',
+  title: 'Harrison Rogers Software Engineer',
   description:
     'Hi, I am Harrison Rogers a Software Engineer based in New Zealand. I love building sites and applications with React.ts, Next.js, Solidity and other web3 and web2 technologies.',
 };

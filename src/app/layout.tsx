@@ -29,12 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <Analytics />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40`}
       >
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

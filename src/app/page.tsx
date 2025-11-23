@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import headShot from '../assets/headshot.jpeg';
+import ImageGazer from '@/components/imageGazer';
 
 export default function Home() {
   return (
@@ -11,16 +10,8 @@ export default function Home() {
         Harrison Rogers 👋
       </h1>
       <Link href="/about">
-        <div className="relative w-48 h-48 overflow-hidden rounded-full mx-auto sm:float-right sm:ml-5 sm:mb-5 lg:mt-2 mt-5 lg:mb-5 mb-10 hover:scale-105 transition-all duration-300">
-          <Image
-            className="object-cover object-[center_top]"
-            src={headShot}
-            alt="Harrison Rogers"
-            fill
-            sizes="192px"
-            priority
-            unoptimized
-          />
+        <div className="w-48 h-48 overflow-hidden rounded-full mx-auto sm:float-right sm:ml-5 sm:mb-5 lg:mt-2 mt-5 lg:mb-5 mb-10 hover:scale-105 transition-all duration-300">
+          <ImageGazer />
         </div>
       </Link>
 

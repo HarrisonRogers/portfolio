@@ -68,7 +68,7 @@ function ImageGazer() {
   return (
     <div
       ref={containerRef}
-      className="size-full bg-black mx-auto flex items-center justify-center"
+      className="size-full mx-auto flex items-center justify-center"
     >
       <video
         ref={videoRef}
@@ -76,7 +76,7 @@ function ImageGazer() {
         preload="auto"
         defaultValue={5}
         muted
-        className="block w-full max-w-600px border-radius-20px overflow-hidden"
+        className="block w-full border-radius-20px overflow-hidden"
       />
     </div>
   );

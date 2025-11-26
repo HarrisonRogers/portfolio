@@ -1,9 +1,9 @@
 export const metaData = {
-  baseUrl: 'https://nextfolio-template.vercel.app/',
+  baseUrl: 'https://harrisonrogers.dev/',
   title: 'Harrison Rogers',
   name: 'Harrison Rogers',
-  ogImage: '/opengraph-image.png',
-  description: 'Harrison Rogers Software Developer Portfolio',
+  ogImage: '/harrison.jpeg',
+  description: 'Harrison Rogers Software Engineer Portfolio',
 };
 
 export const socialLinks = {

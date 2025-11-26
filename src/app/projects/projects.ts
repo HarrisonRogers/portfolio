@@ -1,7 +1,6 @@
 export const projects = [
   {
     title: 'Crypto Spy',
-    year: '2025',
     description: 'Crypto tracker chrome extension',
     url: 'https://www.cryptospy.app/',
     sourceCode: 'https://github.com/HarrisonRogers/crypto-spy',
@@ -9,31 +8,20 @@ export const projects = [
   },
   {
     title: 'Site Whiz',
-    year: '2025',
     description: 'AI chat bot to read construction plans',
     url: 'https://site-whiz.vercel.app/',
     sourceCode: 'https://github.com/HarrisonRogers/site-whiz',
     personal: true,
   },
   {
-    title: 'Kiwi Crypto',
-    year: '2024',
-    description: 'Track crypto prices in NZD',
+    title: 'Node Sol',
+    description: 'Locally run Solana Copy trading bot',
     url: '',
-    sourceCode: 'https://github.com/HarrisonRogers/Kiwi-Crypto',
-    personal: true,
-  },
-  {
-    title: 'Jobify',
-    year: '2024',
-    description: 'Job tracking website',
-    url: '',
-    sourceCode: 'https://github.com/HarrisonRogers/jobify',
+    sourceCode: 'https://github.com/HarrisonRogers/node-sol',
     personal: true,
   },
   {
     title: 'Site Pro',
-    year: '2024',
     description: 'Building asset management platform',
     url: '',
     sourceCode: 'https://github.com/HarrisonRogers/SitePro',
@@ -41,7 +29,6 @@ export const projects = [
   },
   {
     title: 'First Table',
-    year: '2025',
     description: 'Restaurant booking platform for 50% off meals',
     url: 'https://www.firsttable.co.nz/',
     sourceCode: '',
@@ -49,7 +36,6 @@ export const projects = [
   },
   {
     title: 'Launch Base Tokens',
-    year: '2025',
     description: 'Launch sepolia base crypto tokens',
     url: 'https://launch-base-tokens.vercel.app/',
     sourceCode: 'https://github.com/HarrisonRogers/launch-base-tokens',
@@ -57,7 +43,6 @@ export const projects = [
   },
   {
     title: 'Eth Blogs',
-    year: '2025',
     description: 'Write blogs and set subscription fees with base',
     url: '',
     sourceCode: 'https://github.com/HarrisonRogers/eth-blogs',

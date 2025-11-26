@@ -20,6 +20,7 @@ export default function Home() {
               src="/harrison.jpeg"
               alt="Harrison Rogers"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-top object-cover"
               priority
             />
@@ -29,9 +30,8 @@ export default function Home() {
 
       <p className="mt-7">
         I&apos;m a Software Engineer with a full-stack background, specializing
-        in React, Next.js and TypeScript. I have a deep passion for Web3 and AI
-        development. I build smart contracts with Solidity, and create dynamic,
-        interactive frontends that bridge users to blockchain technology and AI.
+        in React, React Native and TypeScript. I have a deep passion for Web3
+        and AI development.
       </p>
       <p className="mt-5">
         I love solving complex problems, experimenting with new technologies,

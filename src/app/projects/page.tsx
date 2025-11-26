@@ -28,40 +28,46 @@ function ProjectsPage() {
           {sectionTitle}
         </h2>
         <div>
-          {projectList
-            .sort((a, b) => Number(b.year) - Number(a.year))
-            .map((project, index) => (
-              <Link
-                key={index}
-                href={project.url || project.sourceCode}
-                className="flex flex-col space-y-1 mb-5 transition hover:opacity-85"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
-                  <div className="flex items-center space-x-2">
+          {projectList.map((project, index) => (
+            <div key={index} className="flex flex-col space-y-1 mb-5">
+              <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+                <div className="flex items-center space-x-2">
+                  {project.url ? (
+                    <Link
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black dark:text-white underline underline-offset-2 hover:no-underline transition"
+                    >
+                      <h3>{project.title}</h3>
+                    </Link>
+                  ) : (
                     <h3 className="text-black dark:text-white">
                       {project.title}
                     </h3>
-                    <span className="text-sm text-neutral-500 dark:text-neutral-400">
-                      ({project.year})
-                    </span>
-                    {project.sourceCode && (
-                      <span className="text-sm text-neutral-500 dark:text-neutral-400">
-                        (
-                        <span className="underline underline-offset-2 hover:no-underline">
-                          Source Code
-                        </span>
-                        )
+                  )}
+
+                  {project.sourceCode && (
+                    <Link
+                      href={project.sourceCode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-neutral-500 dark:text-neutral-400 transition hover:opacity-70"
+                    >
+                      (
+                      <span className="underline underline-offset-2 hover:no-underline">
+                        Source Code
                       </span>
-                    )}
-                  </div>
-                  <p className="text-neutral-600 dark:text-neutral-400 tracking-tight">
-                    {project.description}
-                  </p>
+                      )
+                    </Link>
+                  )}
                 </div>
-              </Link>
-            ))}
+                <p className="text-neutral-600 dark:text-neutral-400 tracking-tight">
+                  {project.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     );

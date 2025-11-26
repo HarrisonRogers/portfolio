@@ -9,12 +9,19 @@ const YEAR = new Date().getFullYear();
 function SocialLink({
   href,
   icon: Icon,
+  ariaLabel,
 }: {
   href: string;
   icon: React.ElementType;
+  ariaLabel: string;
 }) {
   return (
-    <Link href={href} target="_blank" rel="noopener noreferrer">
+    <Link
+      href={href}
+      aria-label={ariaLabel}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <Icon />
     </Link>
   );
@@ -23,10 +30,18 @@ function SocialLink({
 function SocialLinks() {
   return (
     <div className="flex text-lg gap-3.5 float-right transition-opacity duration-300 hover:opacity-90">
-      <SocialLink href={socialLinks.twitter} icon={FaXTwitter} />
-      <SocialLink href={socialLinks.github} icon={FaGithub} />
-      <SocialLink href={socialLinks.linkedin} icon={FaLinkedinIn} />
-      <SocialLink href={socialLinks.email} icon={IoIosMail} />
+      <SocialLink href={socialLinks.twitter} icon={FaXTwitter} ariaLabel="X" />
+      <SocialLink
+        href={socialLinks.github}
+        icon={FaGithub}
+        ariaLabel="GitHub"
+      />
+      <SocialLink
+        href={socialLinks.linkedin}
+        icon={FaLinkedinIn}
+        ariaLabel="LinkedIn"
+      />
+      <SocialLink href={socialLinks.email} icon={IoIosMail} ariaLabel="Email" />
     </div>
   );
 }

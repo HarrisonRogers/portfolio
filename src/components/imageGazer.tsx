@@ -39,7 +39,7 @@ function ImageGazer() {
     const normalizedY = Math.max(-1, Math.min(1, deltaY / maxDistance));
 
     // Map to indices (0 to X_STEPS-1, 0 to Y_STEPS-1)
-    const videoXIndex = Math.round(((normalizedX + 1) / 2) * (X_STEPS - 1));
+    const videoXIndex = Math.round(((normalizedX + 1) / 2) * (X_STEPS - 2)); // Can't go above 23
     const videoYIndex = Math.round(((normalizedY + 1) / 2) * (Y_STEPS - 1));
 
     // Calculate frame index (row-major order: y * width + x)

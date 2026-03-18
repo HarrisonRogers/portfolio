@@ -17,7 +17,8 @@ function Navbar() {
             <Link
               key={path}
               href={path}
-              className="transition hover:opacity-85 "
+              className="transition hover:opacity-85"
+              transitionTypes={['slide']}
             >
               {name}
             </Link>

@@ -6,6 +6,7 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
+import { ViewTransition } from 'react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -45,7 +46,7 @@ export default function RootLayout({
         >
           <main className="flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[630px] w-full">
             <Navbar />
-            {children}
+            <ViewTransition>{children}</ViewTransition>
             <Footer />
           </main>
         </ThemeProvider>

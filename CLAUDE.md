@@ -5,10 +5,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Build & Development Commands
 
 ```bash
-yarn dev          # Start dev server with Turbopack
-yarn build        # Production build
-yarn start        # Start production server
-yarn lint         # Run ESLint (next/core-web-vitals + typescript)
+pnpm dev          # Start dev server with Turbopack
+pnpm build        # Production build
+pnpm start        # Start production server
+pnpm lint         # Run ESLint (next/core-web-vitals + typescript)
 ```
 
 ## Architecture Overview

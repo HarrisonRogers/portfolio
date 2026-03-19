@@ -30,9 +30,9 @@ export default function Home() {
       </Link>
 
       <p className="mt-7">
-        I&apos;m a Software Engineer with a full-stack background, specializing
-        in React, React Native and TypeScript. I have a deep passion for Web3
-        and AI development.
+        I&apos;m an AI Integrated Software Engineer with a full-stack
+        background, specializing in React, React Native and Rust. I have a deep
+        passion for AI and web3 development.
       </p>
       <p className="mt-5">
         I love solving complex problems, experimenting with new technologies,

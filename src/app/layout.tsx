@@ -19,9 +19,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Harrison Rogers Software Engineer',
+  title: 'Harrison | AI Integrated Software Engineer',
   description:
-    'Hi, I am Harrison Rogers a Software Engineer based in New Zealand. I love building sites and applications with React.ts, Next.js, Solidity and other web3 and web2 technologies.',
+    'Hi, I am Harrison Rogers an AI Integrated Software Engineer based in New Zealand. I love building AI, Web and Ios applications.',
 };
 
 export default function RootLayout({

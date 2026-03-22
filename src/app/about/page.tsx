@@ -1,87 +1,62 @@
 import React from 'react';
 import { Metadata } from 'next';
-import techStack from './techStack';
+import Card from '@/components/ui/card';
+import techStack, { type TechStackCardProps } from './techStack';
 
 export const metadata: Metadata = {
   title: 'About Me',
   description: 'Learn about me, who I am and my tech stack',
 };
 
-const categoryMeta: Record<string, { icon: string }> = {
-  Languages: { icon: '{ }' },
-  Frontend: { icon: '◆' },
-  Backend: { icon: '⬡' },
+const TechStackCard = ({ title, icon, technologies }: TechStackCardProps) => {
+  return (
+    <Card className="w-full">
+      <div className="p-6">
+        <h2 className="text-lg font-semibold">
+          {icon} {title}
+        </h2>
+        <ul className="list-disc pl-6 mt-2">
+          {technologies.map((tech, index) => (
+            <li key={index}>{tech}</li>
+          ))}
+        </ul>
+      </div>
+    </Card>
+  );
 };
 
 function AboutPage() {
   return (
     <div>
-      {/* Header */}
-      <div>
-        <p className="text-sm font-mono text-muted-foreground tracking-wider uppercase mb-4">
-          Background
-        </p>
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-10">
-          About
-        </h1>
-      </div>
-
-      {/* Narrative */}
-      <div className="space-y-5 text-lg leading-relaxed">
-        <p>
-          I chose to forge my own path in Software Engineering rather than follow
-          the traditional university route. At 18, I built a solid foundation and
-          have since been honing my skills at{' '}
-          <span className="font-medium text-foreground">First Table</span>.
-        </p>
-        <p className="text-muted-foreground">
-          I thrive in hands-on learning — spending my days in the editor, building
-          real projects. I&apos;m passionate about driving innovation in{' '}
-          <span className="font-medium text-[var(--accent-blue)]">
-            Web3
-          </span>{' '}
-          and{' '}
-          <span className="font-medium text-[var(--accent-blue)]">
-            AI
-          </span>{' '}
-          technologies.
-        </p>
-      </div>
-
-      {/* Divider */}
-      <div className="section-divider my-12" />
-
-      {/* Tech stack */}
-      <h2 className="text-sm font-mono text-muted-foreground tracking-wider uppercase mb-8">
-        Tech Stack
-      </h2>
-
-      <div className="space-y-8">
-        {Object.entries(techStack).map(([key, technologies]) => {
-          const title = key.charAt(0).toUpperCase() + key.slice(1);
-          const meta = categoryMeta[title] || { icon: '●' };
-
-          return (
-            <div key={key} className="group">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="specialty-icon text-sm font-mono font-bold">
-                  {meta.icon}
-                </span>
-                <h3 className="text-lg font-semibold">{title}</h3>
-              </div>
-              <div className="flex flex-wrap gap-2 pl-[52px]">
-                {technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1.5 text-sm rounded-lg bg-secondary text-secondary-foreground font-medium transition-colors hover:bg-secondary/80"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          );
-        })}
+      <h1 className="text-3xl mb-7">About</h1>
+      <p className="leading-relaxed">
+        I chose to forge my own path in Software Engineering rather than follow
+        the traditional university route. At 18, I built a solid foundation and
+        have since been honing my skills at First Table. I thrive in hands-on
+        learning—spending my days in the editor, building real projects.
+        I&apos;m passionate about driving innovation in Web3 and blockchain
+        technologies.
+      </p>
+      <p className="mt-4">
+        I love working with modern technologies to build scalable,
+        high-performance applications. My tech stack includes:
+      </p>
+      <div className="mt-4 flex flex-col gap-4">
+        <TechStackCard
+          title="Languages"
+          icon="🌐"
+          technologies={techStack.languages}
+        />
+        <TechStackCard
+          title="Frontend"
+          icon="🚀"
+          technologies={techStack.frontend}
+        />
+        <TechStackCard
+          title="Backend"
+          icon="🛠"
+          technologies={techStack.backend}
+        />
       </div>
     </div>
   );

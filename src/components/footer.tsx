@@ -21,7 +21,6 @@ function SocialLink({
       aria-label={ariaLabel}
       target="_blank"
       rel="noopener noreferrer"
-      className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-200"
     >
       <Icon />
     </Link>
@@ -30,7 +29,7 @@ function SocialLink({
 
 function SocialLinks() {
   return (
-    <div className="flex text-lg gap-1">
+    <div className="flex text-lg gap-3.5 float-right transition-opacity duration-300 hover:opacity-90">
       <SocialLink href={socialLinks.twitter} icon={FaXTwitter} ariaLabel="X" />
       <SocialLink
         href={socialLinks.github}
@@ -49,21 +48,17 @@ function SocialLinks() {
 
 export default function Footer() {
   return (
-    <footer className="lg:mt-24 mt-16 pt-8 border-t border-border">
-      <div className="flex items-center justify-between">
-        <div className="text-sm text-muted-foreground">
-          <span className="font-mono">{YEAR}</span>{' '}
-          <Link
-            className="no-underline hover:text-foreground transition-colors"
-            href={socialLinks.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {metaData.name}
-          </Link>
-        </div>
-        <SocialLinks />
-      </div>
-    </footer>
+    <small className="block lg:mt-24 mt-16 text-[#1C1C1C] dark:text-[#D4D4D4]">
+      <time>{YEAR}</time>{' '}
+      <Link
+        className="no-underline"
+        href={socialLinks.twitter}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {metaData.title}
+      </Link>
+      <SocialLinks />
+    </small>
   );
 }

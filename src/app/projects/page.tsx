@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { projects } from './projects';
+import { projects, type ProjectTag } from './projects';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,63 +8,79 @@ export const metadata: Metadata = {
   description: 'Projects I have built and contributed to',
 };
 
+const tagLabels: Record<ProjectTag, string> = {
+  ai: 'AI',
+  web3: 'Web3',
+  mobile: 'Mobile',
+  backend: 'Backend',
+  frontend: 'Frontend',
+};
+
 function ProjectsPage() {
-  // Separate projects into personal and work categories
-  const personalProjects = projects.filter(
-    (project) => project.personal === true
-  );
-  const workProjects = projects.filter((project) => project.personal === false);
+  const personalProjects = projects.filter((p) => p.personal);
+  const workProjects = projects.filter((p) => !p.personal);
 
-  // Helper function to render a project list
-  const renderProjectList = (
-    projectList: typeof projects,
-    sectionTitle: string
+  const renderSection = (
+    list: typeof projects,
+    title: string
   ) => {
-    if (projectList.length === 0) return null;
-
+    if (list.length === 0) return null;
     return (
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-4 text-black dark:text-white">
-          {sectionTitle}
+      <div className="mb-12">
+        <h2 className="text-sm font-mono text-muted-foreground tracking-wider uppercase mb-6">
+          {title}
         </h2>
-        <div>
-          {projectList.map((project, index) => (
-            <div key={index} className="flex flex-col space-y-1 mb-5">
-              <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
-                <div className="flex items-center space-x-2">
-                  {project.url ? (
-                    <Link
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-black dark:text-white underline underline-offset-2 hover:no-underline transition"
-                    >
-                      <h3>{project.title}</h3>
-                    </Link>
-                  ) : (
-                    <h3 className="text-black dark:text-white">
-                      {project.title}
-                    </h3>
-                  )}
-
-                  {project.sourceCode && (
-                    <Link
-                      href={project.sourceCode}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-neutral-500 dark:text-neutral-400 transition hover:opacity-70"
-                    >
-                      (
-                      <span className="underline underline-offset-2 hover:no-underline">
-                        Source Code
+        <div className="space-y-3">
+          {list.map((project) => (
+            <div
+              key={project.title}
+              className="glow-card group rounded-xl border border-border bg-card p-5 transition-all"
+            >
+              <div className="relative z-10 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-3 mb-1.5">
+                    {project.url ? (
+                      <Link
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground font-semibold text-base hover:text-[var(--accent-blue)] transition-colors"
+                      >
+                        {project.title}
+                        <span className="inline-block ml-1.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
+                          ↗
+                        </span>
+                      </Link>
+                    ) : (
+                      <span className="text-foreground font-semibold text-base">
+                        {project.title}
                       </span>
-                      )
-                    </Link>
-                  )}
+                    )}
+                    {project.sourceCode && (
+                      <Link
+                        href={project.sourceCode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        src
+                      </Link>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    {project.description}
+                  </p>
                 </div>
-                <p className="text-neutral-600 dark:text-neutral-400 tracking-tight">
-                  {project.description}
-                </p>
+                <div className="flex flex-wrap gap-1.5 sm:flex-nowrap sm:ml-4 shrink-0">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="tech-tag"
+                    >
+                      {tagLabels[tag]}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -75,14 +91,20 @@ function ProjectsPage() {
 
   return (
     <div>
-      <h1 className="text-3xl mb-7">
-        Projects{' '}
-        <span className="text-gray-500 dark:text-gray-400 text-sm">
-          (some of these may be older and don&apos;t work )
-        </span>
-      </h1>
-      {renderProjectList(workProjects, 'Work')}
-      {renderProjectList(personalProjects, 'Personal')}
+      <div>
+        <p className="text-sm font-mono text-muted-foreground tracking-wider uppercase mb-4">
+          What I&apos;ve built
+        </p>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-2">
+          Projects
+        </h1>
+        <p className="text-muted-foreground text-sm mb-10">
+          Some of these may be older and no longer active.
+        </p>
+      </div>
+
+      {renderSection(workProjects, 'Work')}
+      {renderSection(personalProjects, 'Personal')}
     </div>
   );
 }

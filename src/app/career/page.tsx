@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 function CareerPage() {
   const formatDate = (dateString: string): string => {
     if (dateString === 'Present') return 'Present';
-    return dayjs(dateString).format('MMMM YYYY');
+    return dayjs(dateString).format('MMM YYYY');
   };
 
   const sortedCareers = [...careers].sort((a, b) =>
@@ -25,34 +25,66 @@ function CareerPage() {
 
   return (
     <div>
-      <h1 className="text-3xl mb-8">Career</h1>
+      {/* Header */}
+      <div>
+        <p className="text-sm font-mono text-muted-foreground tracking-wider uppercase mb-4">
+          Experience
+        </p>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-12">
+          Career
+        </h1>
+      </div>
 
-      <ol className="relative border-s border-gray-200 dark:border-gray-700">
-        {sortedCareers.map((career, index) => (
-          <li
-            key={index}
-            className={`mb-10 ms-4 ${
-              index === sortedCareers.length - 1 ? '' : 'mb-10'
-            }`}
-          >
-            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+      {/* Timeline */}
+      <div className="timeline-line pl-8 space-y-10">
+        {sortedCareers.map((career, index) => {
+          const isActive = career.endDate === 'Present';
+          return (
+            <div key={index} className="relative">
+              <div
+                className={`timeline-dot ${isActive ? 'timeline-dot-active' : ''}`}
+              />
 
-            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              {formatDate(career.startDate)} - {formatDate(career.endDate)}
-            </time>
+              <div className="group">
+                <time className="text-xs font-mono text-muted-foreground tracking-wider uppercase">
+                  {formatDate(career.startDate)} — {formatDate(career.endDate)}
+                </time>
 
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              {career.title}
-            </h3>
-            <Link
-              href={career.url}
-              className="text-base font-normal text-gray-500 dark:text-gray-400 mb-2"
-            >
-              {career.company}
-            </Link>
-          </li>
-        ))}
-      </ol>
+                <h3 className="text-xl font-semibold mt-1.5 text-foreground">
+                  {career.title}
+                </h3>
+
+                <Link
+                  href={career.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm font-medium mt-0.5 text-[var(--accent-blue)] transition-colors hover:text-[var(--accent-blue)]/80"
+                >
+                  {career.company}
+                  <span className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-xs">
+                    ↗
+                  </span>
+                </Link>
+
+                {career.description && (
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-lg">
+                    {career.description}
+                  </p>
+                )}
+
+                {isActive && (
+                  <div className="mt-3">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-2.5 py-1 rounded-full bg-[color-mix(in_oklch,var(--accent-blue)_10%,transparent)] text-[var(--accent-blue)] border border-[color-mix(in_oklch,var(--accent-blue)_25%,transparent)]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)] animate-pulse" />
+                      Current
+                    </span>
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

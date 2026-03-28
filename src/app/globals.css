@@ -7,6 +7,7 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
 }
 
 :root {
@@ -130,6 +131,10 @@
 
 /* Custom dark variant */
 @layer utilities {
+  .font-instrument-serif {
+    font-family: var(--font-instrument-serif), serif;
+  }
+
   .dark * {
     /* Dark mode styles */
   }

@@ -11,14 +11,14 @@ export const metadata: Metadata = {
 function ProjectsPage() {
   // Separate projects into personal and work categories
   const personalProjects = projects.filter(
-    (project) => project.personal === true
+    (project) => project.personal === true,
   );
   const workProjects = projects.filter((project) => project.personal === false);
 
   // Helper function to render a project list
   const renderProjectList = (
     projectList: typeof projects,
-    sectionTitle: string
+    sectionTitle: string,
   ) => {
     if (projectList.length === 0) return null;
 
@@ -75,7 +75,7 @@ function ProjectsPage() {
 
   return (
     <div>
-      <h1 className="text-3xl mb-7">
+      <h1 className="text-5xl mb-7 font-instrument-serif tracking-wide">
         Projects{' '}
         <span className="text-gray-500 dark:text-gray-400 text-sm">
           (some of these may be older and don&apos;t work )

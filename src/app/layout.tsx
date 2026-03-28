@@ -4,7 +4,8 @@ import Analytics from '@/components/analytics';
 import { ThemeProvider } from '@/components/theme-provider';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google';
+
 import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
 import { ViewTransition } from 'react';
 
@@ -15,6 +16,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument-serif',
+  weight: '400',
   subsets: ['latin'],
 });
 
@@ -35,7 +42,7 @@ export default function RootLayout({
         <Analytics />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40`}
+        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40`}
       >
         <VercelAnalytics />
         <ThemeProvider

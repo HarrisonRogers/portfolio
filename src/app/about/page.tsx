@@ -28,7 +28,9 @@ const TechStackCard = ({ title, icon, technologies }: TechStackCardProps) => {
 function AboutPage() {
   return (
     <div>
-      <h1 className="text-3xl mb-7">About</h1>
+      <h1 className="text-5xl mb-7 font-instrument-serif tracking-wide">
+        About
+      </h1>
       <p className="leading-relaxed">
         I chose to forge my own path in Software Engineering rather than follow
         the traditional university route. At 18, I built a solid foundation and

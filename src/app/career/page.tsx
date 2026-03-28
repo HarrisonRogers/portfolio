@@ -1,4 +1,3 @@
-import React from 'react';
 import dayjs from 'dayjs';
 import { careers } from './careers';
 import Link from 'next/link';
@@ -19,13 +18,15 @@ function CareerPage() {
     a.endDate === 'Present'
       ? -1
       : b.endDate === 'Present'
-      ? 1
-      : new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
+        ? 1
+        : new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
   );
 
   return (
     <div>
-      <h1 className="text-3xl mb-8">Career</h1>
+      <h1 className="text-5xl mb-8 font-instrument-serif tracking-wide">
+        Career
+      </h1>
 
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
         {sortedCareers.map((career, index) => (
@@ -35,7 +36,7 @@ function CareerPage() {
               index === sortedCareers.length - 1 ? '' : 'mb-10'
             }`}
           >
-            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -inset-s-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
 
             <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
               {formatDate(career.startDate)} - {formatDate(career.endDate)}

@@ -6,7 +6,7 @@ import { metaData } from './config';
 export default function Home() {
   return (
     <div>
-      <h1 className="text-3xl">
+      <h1 className="font-instrument-serif text-6xl tracking-wide">
         Hey, I&apos;m
         <br />
         {metaData.name} 👋

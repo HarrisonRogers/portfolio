@@ -1,15 +1,16 @@
 const techStack = {
-  languages: ['JavaScript', 'TypeScript', 'React', 'Rust', 'Solidity'],
+  languages: ['TypeScript', 'React', 'Rust'],
   frontend: [
     'React',
     'Next.js',
-    'TypeScript',
     'Tailwind CSS',
+    'CSS',
     'React Native',
     'Expo',
+    'AI SDKs',
     'Wagmi',
   ],
-  backend: ['GraphQL', 'PostgreSQL', 'SQLite', 'Node.js'],
+  backend: ['GraphQL', 'PostgreSQL', 'SQLite', 'Node.js', 'Supabase', 'Convex'],
 };
 
 export type TechStackCardProps = {

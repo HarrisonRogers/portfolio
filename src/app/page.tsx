@@ -31,13 +31,13 @@ export default function Home() {
 
       <p className="mt-7">
         I&apos;m an AI Integrated Software Engineer with a full-stack
-        background, specializing in React, React Native and Rust. I have a deep
-        passion for AI and web3 development.
+        background, specializing in TypeScript, React, React Native and Rust. I
+        have a deep passion for AI and web3 development.
       </p>
       <p className="mt-5">
         I love solving complex problems, experimenting with new technologies,
-        and pushing the boundaries of what&apos;s possible on the web. Check out
-        my projects, learn more about me, or get in touch!
+        and pushing the boundaries of what&apos;s possible. If you want to
+        become a powerhouse in this industry, I would love to chat.
       </p>
     </div>
   );

@@ -31,18 +31,25 @@ function AboutPage() {
       <h1 className="text-5xl mb-7 font-instrument-serif tracking-wide">
         About
       </h1>
-      <p className="leading-relaxed">
-        I chose to forge my own path in Software Engineering rather than follow
-        the traditional university route. At 18, I built a solid foundation and
-        have since been honing my skills at First Table. I thrive in hands-on
-        learning—spending my days in the editor, building real projects.
-        I&apos;m passionate about driving innovation in Web3 and blockchain
-        technologies.
-      </p>
-      <p className="mt-4">
-        I love working with modern technologies to build scalable,
-        high-performance applications. My tech stack includes:
-      </p>
+      <article className="space-y-4">
+        <p>
+          I am a Software Engineer from New Zealand. I currently work at{' '}
+          <a
+            href="https://www.firsttable.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:no-underline"
+          >
+            First Table
+          </a>{' '}
+          as a Frontend Developer. I love building whatever interests me,
+          whether that is a web app, mobile app, trading bots or ai
+          applications/automation's.
+        </p>
+        <p>
+          When I am creating and tinkering I tend to use the tech stack below.
+        </p>
+      </article>
       <div className="mt-4 flex flex-col gap-4">
         <TechStackCard
           title="Languages"

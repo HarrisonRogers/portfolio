@@ -75,12 +75,18 @@ function ProjectsPage() {
 
   return (
     <div>
-      <h1 className="text-5xl mb-7 font-instrument-serif tracking-wide">
-        Projects{' '}
-        <span className="text-gray-500 dark:text-gray-400 text-sm">
+      <div className="flex items-center gap-2">
+        <h1 className="text-5xl mb-7 font-instrument-serif tracking-wide">
+          Projects{' '}
+        </h1>
+        <small className="text-gray-500 dark:text-gray-400">
           (some of these may be older and don&apos;t work )
-        </span>
-      </h1>
+        </small>
+      </div>
+      <p className="text-gray-500 dark:text-gray-400 mb-8">
+        A lot of my work is done in private repositories so not all of them are
+        listed here.
+      </p>
       {renderProjectList(workProjects, 'Work')}
       {renderProjectList(personalProjects, 'Personal')}
     </div>

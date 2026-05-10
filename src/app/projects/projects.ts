@@ -7,10 +7,10 @@ export const projects = [
     personal: true,
   },
   {
-    title: 'Site Whiz',
-    description: 'AI chat bot to read construction plans',
-    url: 'https://site-whiz.vercel.app/',
-    sourceCode: 'https://github.com/HarrisonRogers/site-whiz',
+    title: 'Arbitrage Polymarket Bot',
+    description: 'Trades 15 minute crypto markets on polymarket',
+    url: '',
+    sourceCode: 'https://github.com/HarrisonRogers/arbitrage-polymarket',
     personal: true,
   },
   {
@@ -18,13 +18,6 @@ export const projects = [
     description: 'Locally run Solana Copy trading bot',
     url: '',
     sourceCode: 'https://github.com/HarrisonRogers/node-sol',
-    personal: true,
-  },
-  {
-    title: 'Site Pro',
-    description: 'Building asset management platform',
-    url: '',
-    sourceCode: 'https://github.com/HarrisonRogers/SitePro',
     personal: true,
   },
   {

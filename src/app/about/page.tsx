@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Card from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 import techStack, { type TechStackCardProps } from './techStack';
 
 export const metadata: Metadata = {
@@ -8,9 +9,14 @@ export const metadata: Metadata = {
   description: 'Learn about me, who I am and my tech stack',
 };
 
-const TechStackCard = ({ title, icon, technologies }: TechStackCardProps) => {
+const TechStackCard = ({
+  title,
+  icon,
+  technologies,
+  className,
+}: TechStackCardProps & { className?: string }) => {
   return (
-    <Card className="w-full">
+    <Card className={cn('w-full', className)}>
       <div className="p-6">
         <h2 className="text-lg font-semibold">
           {icon} {title}
@@ -44,17 +50,18 @@ function AboutPage() {
           </a>{' '}
           as a Frontend Developer. I love building whatever interests me,
           whether that is a web app, mobile app, trading bots or ai
-          applications/automation's.
+          applications/automations.
         </p>
         <p>
           When I am creating and tinkering I tend to use the tech stack below.
         </p>
       </article>
-      <div className="mt-4 flex flex-col gap-4">
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <TechStackCard
           title="Languages"
           icon="🌐"
           technologies={techStack.languages}
+          className="sm:col-span-2"
         />
         <TechStackCard
           title="Frontend"

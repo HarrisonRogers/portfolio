@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dialog';
 import { ExternalLink, Github } from 'lucide-react';
 import { useState } from 'react';
+import { ProjectVideo } from './projectVideo';
 import type { Project } from './projects';
 
 type ProjectListProps = {
@@ -55,31 +56,12 @@ export function ProjectList({ projects, sectionTitle }: ProjectListProps) {
 
       {selectedProject && (
         <DialogContent className="max-w-2xl gap-0 overflow-hidden rounded-2xl p-0 sm:max-w-2xl">
-          {'video' in selectedProject && (
-            <div className="relative aspect-video w-full shrink-0 overflow-hidden bg-neutral-100 dark:bg-neutral-900">
-              <video
-                src={selectedProject.video}
-                aria-hidden="true"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 size-full scale-110 object-cover opacity-60 blur-2xl"
-              />
-              <div
-                className="absolute inset-0 bg-black/10"
-                aria-hidden="true"
-              />
-              <video
-                src={selectedProject.video}
-                aria-label={`${selectedProject.title} preview`}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="relative z-10 size-full object-contain"
-              />
-            </div>
+          {selectedProject.video && (
+            <ProjectVideo
+              key={selectedProject.video}
+              src={selectedProject.video}
+              title={selectedProject.title}
+            />
           )}
 
           <div>

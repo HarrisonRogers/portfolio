@@ -1,6 +1,6 @@
 import { projects } from './projects';
 import { Metadata } from 'next';
-import { ProjectList } from './project-list';
+import { ProjectList } from './projectList';
 
 export const metadata: Metadata = {
   title: 'Projects',

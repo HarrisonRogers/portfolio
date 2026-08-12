@@ -9,7 +9,7 @@ export default function Home() {
       <h1 className="font-instrument-serif text-6xl tracking-wide">
         Hey, I&apos;m
         <br />
-        {metaData.name} 👋
+        {metaData.name}
       </h1>
       <Link href="/about">
         <div className="w-48 h-48 overflow-hidden rounded-full mx-auto sm:float-right sm:ml-5 sm:mb-5 lg:mt-2 mt-5 lg:mb-5 mb-10 hover:scale-105 transition-all duration-300 relative">

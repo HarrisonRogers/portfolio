@@ -1,0 +1,95 @@
+# Harrison Rogers Developer API and MCP Reference
+
+Harrison Rogers is an AI Integrated Software Engineer based in New Zealand. His public portfolio is https://harrisonrogers.dev.
+
+All API and MCP operations documented here are public, free, read-only, and require no authentication. REST responses are JSON and permit cross-origin GET requests.
+
+## REST API
+
+Base URL: https://harrisonrogers.dev/api
+
+### GET /api
+
+Returns the API directory with links to the documentation, OpenAPI specification, MCP server, and data endpoints.
+
+### GET /api/profile
+
+Returns Harrison Rogers' professional profile, role, New Zealand location, summary, skills, website, GitHub, LinkedIn, X, and email address.
+
+### GET /api/projects
+
+Returns all public portfolio projects and a result count. Each project may include a title, description, website URL, source-code URL, and a personal-project flag.
+
+Optional query parameter:
+
+- type=personal returns only personal projects
+- type=work returns only professional projects
+
+An unsupported type returns HTTP 400 with a structured JSON error.
+
+### GET /api/career
+
+Returns Harrison Rogers' public employment history and a result count. Each record includes title, company, ISO start date, end date or Present, company URL, and description.
+
+## OpenAPI
+
+The machine-readable OpenAPI 3.1 specification is published at:
+
+https://harrisonrogers.dev/openapi.json
+
+## Model Context Protocol
+
+Streamable HTTP endpoint: https://harrisonrogers.dev/mcp
+
+Server manifest: https://harrisonrogers.dev/.well-known/mcp.json
+
+Preferred protocol version: 2026-07-28
+
+The server also accepts the legacy initialize flow for protocol versions 2025-11-25, 2025-06-18, and 2025-03-26 for client compatibility.
+
+The MCP server is stateless and supports JSON-RPC 2.0 over HTTP POST. Current clients should send MCP-Protocol-Version, Mcp-Method, and, for tools/call, Mcp-Name headers matching the request body.
+
+### MCP tools
+
+#### get_profile
+
+Returns Harrison Rogers' public professional profile. It takes no arguments.
+
+#### list_projects
+
+Returns public projects. Optional argument `type` accepts `all`, `personal`, or `work` and defaults to `all`.
+
+#### list_career
+
+Returns Harrison Rogers' public employment history. It takes no arguments.
+
+All tools are read-only, non-destructive, and idempotent.
+
+### MCP tool discovery example
+
+POST https://harrisonrogers.dev/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+MCP-Protocol-Version: 2026-07-28
+Mcp-Method: tools/list
+
+{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"example-client","version":"1.0.0"},"io.modelcontextprotocol/clientCapabilities":{}}}}
+
+### MCP tool call example
+
+POST https://harrisonrogers.dev/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+MCP-Protocol-Version: 2026-07-28
+Mcp-Method: tools/call
+Mcp-Name: list_projects
+
+{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"list_projects","arguments":{"type":"personal"},"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"example-client","version":"1.0.0"},"io.modelcontextprotocol/clientCapabilities":{}}}}
+
+## Contact and identity
+
+- Website: https://harrisonrogers.dev
+- GitHub: https://github.com/harrisonrogers
+- LinkedIn: https://www.linkedin.com/in/harrison-euan-rogers/
+- X: https://x.com/hrogerzzz
+- Email: harrison.rogers05@gmail.com

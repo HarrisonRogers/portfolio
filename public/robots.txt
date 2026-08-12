@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Allow: /api/
+Allow: /developers
+Allow: /openapi.json
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /.well-known/
+Allow: /mcp
 
 Sitemap: https://harrisonrogers.dev/sitemap.xml

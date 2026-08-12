@@ -1,0 +1,240 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Harrison Rogers Developer API",
+    "version": "1.0.0",
+    "description": "Public, read-only portfolio data for Harrison Rogers. All endpoints are available without authentication.",
+    "contact": {
+      "name": "Harrison Rogers",
+      "url": "https://harrisonrogers.dev",
+      "email": "harrison.rogers05@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://harrisonrogers.dev",
+      "description": "Production"
+    }
+  ],
+  "externalDocs": {
+    "description": "Harrison Rogers Developer API and MCP Documentation",
+    "url": "https://harrisonrogers.dev/developers"
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "Discovery",
+      "description": "Discover available developer resources."
+    },
+    {
+      "name": "Portfolio",
+      "description": "Read Harrison Rogers' public professional information."
+    }
+  ],
+  "paths": {
+    "/api": {
+      "get": {
+        "operationId": "getApiDirectory",
+        "summary": "Get the API directory",
+        "description": "Returns links to the developer documentation, OpenAPI specification, MCP server, and public data endpoints.",
+        "tags": ["Discovery"],
+        "responses": {
+          "200": {
+            "description": "API directory",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ApiDirectory" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/profile": {
+      "get": {
+        "operationId": "getProfile",
+        "summary": "Get Harrison Rogers' profile",
+        "description": "Returns Harrison Rogers' public professional profile, skills, and contact links.",
+        "tags": ["Portfolio"],
+        "responses": {
+          "200": {
+            "description": "Professional profile",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["data"],
+                  "properties": {
+                    "data": { "$ref": "#/components/schemas/Profile" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/projects": {
+      "get": {
+        "operationId": "listProjects",
+        "summary": "List Harrison Rogers' projects",
+        "description": "Returns public personal and professional software projects.",
+        "tags": ["Portfolio"],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Limit results to personal or work projects.",
+            "schema": {
+              "type": "string",
+              "enum": ["personal", "work"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Project list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["data", "count"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/Project" }
+                    },
+                    "count": { "type": "integer", "minimum": 0 }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unsupported project type",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/career": {
+      "get": {
+        "operationId": "listCareer",
+        "summary": "List Harrison Rogers' career history",
+        "description": "Returns Harrison Rogers' public employment history.",
+        "tags": ["Portfolio"],
+        "responses": {
+          "200": {
+            "description": "Career history",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["data", "count"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/Career" }
+                    },
+                    "count": { "type": "integer", "minimum": 0 }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApiDirectory": {
+        "type": "object",
+        "required": ["name", "version", "documentation", "openapi", "mcp", "endpoints"],
+        "properties": {
+          "name": { "type": "string" },
+          "version": { "type": "string" },
+          "documentation": { "type": "string", "format": "uri" },
+          "openapi": { "type": "string", "format": "uri" },
+          "mcp": { "type": "string", "format": "uri" },
+          "endpoints": {
+            "type": "object",
+            "required": ["profile", "projects", "career"],
+            "properties": {
+              "profile": { "type": "string", "format": "uri" },
+              "projects": { "type": "string", "format": "uri" },
+              "career": { "type": "string", "format": "uri" }
+            }
+          }
+        }
+      },
+      "Profile": {
+        "type": "object",
+        "required": ["name", "role", "location", "summary", "skills", "links"],
+        "properties": {
+          "name": { "type": "string", "example": "Harrison Rogers" },
+          "role": { "type": "string", "example": "AI Integrated Software Engineer" },
+          "location": { "type": "string", "example": "New Zealand" },
+          "summary": { "type": "string" },
+          "skills": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "links": {
+            "type": "object",
+            "required": ["website", "github", "linkedin", "x", "email"],
+            "properties": {
+              "website": { "type": "string", "format": "uri" },
+              "github": { "type": "string", "format": "uri" },
+              "linkedin": { "type": "string", "format": "uri" },
+              "x": { "type": "string", "format": "uri" },
+              "email": { "type": "string", "format": "email" }
+            }
+          }
+        }
+      },
+      "Project": {
+        "type": "object",
+        "required": ["title", "description", "url", "sourceCode", "personal"],
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "url": { "type": "string", "description": "Project URL or an empty string when no public URL is available." },
+          "sourceCode": { "type": "string", "description": "Source-code URL or an empty string for private projects." },
+          "personal": { "type": "boolean" }
+        }
+      },
+      "Career": {
+        "type": "object",
+        "required": ["title", "company", "startDate", "endDate", "url"],
+        "properties": {
+          "title": { "type": "string" },
+          "company": { "type": "string" },
+          "startDate": { "type": "string", "format": "date" },
+          "endDate": { "type": "string", "description": "ISO date or Present." },
+          "url": { "type": "string", "format": "uri" },
+          "description": { "type": "string" }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": ["code", "message"],
+            "properties": {
+              "code": { "type": "string" },
+              "message": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

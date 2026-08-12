@@ -1,0 +1,25 @@
+# Harrison Rogers
+
+> Harrison Rogers is a New Zealand AI Integrated Software Engineer. harrisonrogers.dev is his public portfolio and provides a read-only REST API and MCP server for agents to retrieve his professional profile, projects, and career history.
+
+## Developer resources
+
+- [Harrison Rogers Developer API and MCP Documentation](https://harrisonrogers.dev/developers): Human-readable API and MCP integration guide
+- [Harrison Rogers OpenAPI Specification](https://harrisonrogers.dev/openapi.json): OpenAPI 3.1 contract for the public REST API
+- [Harrison Rogers API Directory](https://harrisonrogers.dev/api): JSON index of public endpoints
+- [Harrison Rogers MCP Server](https://harrisonrogers.dev/mcp): Streamable HTTP MCP endpoint; send JSON-RPC requests with HTTP POST
+- [Harrison Rogers MCP Manifest](https://harrisonrogers.dev/.well-known/mcp.json): Machine-readable MCP server metadata
+- [Full Agent Reference](https://harrisonrogers.dev/llms-full.txt): Complete API and MCP usage details
+
+## Public data
+
+- [Professional Profile](https://harrisonrogers.dev/api/profile): Skills, location, summary, and public contact links
+- [Projects](https://harrisonrogers.dev/api/projects): Personal and professional software projects
+- [Career](https://harrisonrogers.dev/api/career): Public employment history
+
+## Portfolio pages
+
+- [Home](https://harrisonrogers.dev/)
+- [About Harrison Rogers](https://harrisonrogers.dev/about)
+- [Harrison Rogers Projects](https://harrisonrogers.dev/projects)
+- [Harrison Rogers Career](https://harrisonrogers.dev/career)

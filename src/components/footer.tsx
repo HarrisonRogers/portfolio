@@ -58,6 +58,13 @@ export default function Footer() {
       >
         {metaData.title}
       </Link>
+      <span aria-hidden="true"> · </span>
+      <Link
+        className="text-neutral-500 dark:text-neutral-400 transition hover:text-black dark:hover:text-white"
+        href="/developers"
+      >
+        Developers
+      </Link>
       <SocialLinks />
     </small>
   );

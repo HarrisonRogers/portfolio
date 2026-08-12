@@ -1,0 +1,26 @@
+{
+  "name": "harrison-rogers-portfolio",
+  "title": "Harrison Rogers Portfolio MCP Server",
+  "description": "Read-only access to Harrison Rogers' public professional profile, projects, and career history.",
+  "version": "1.0.0",
+  "protocolVersion": "2026-07-28",
+  "serverInfo": {
+    "name": "harrison-rogers-portfolio",
+    "title": "Harrison Rogers Portfolio MCP Server",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "url": "https://harrisonrogers.dev/mcp"
+  },
+  "endpoint": "https://harrisonrogers.dev/mcp",
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false
+  },
+  "authentication": {
+    "type": "none"
+  },
+  "documentation": "https://harrisonrogers.dev/developers"
+}

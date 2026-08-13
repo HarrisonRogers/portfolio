@@ -4,9 +4,20 @@ export const profile = {
   name: 'Harrison Rogers',
   role: 'AI Integrated Software Engineer',
   location: 'New Zealand',
+  currentRole: 'Frontend/Growth Developer',
+  currentCompany: 'First Table',
   summary:
-    'Full-stack software engineer specialising in TypeScript, React, React Native, Rust, and AI applications and automations.',
-  skills: ['TypeScript', 'React', 'React Native', 'Rust', 'AI applications'],
+    'AI Integrated Software Engineer building full-stack apps in TypeScript, React, React Native, and Rust. Contributes to and builds startups through software engineering and growth engineering.',
+  about:
+    'Software Engineer from New Zealand. Currently a Frontend/Growth Developer at First Table. Builds web apps, mobile apps, trading bots, and AI applications and automations.',
+  skills: [
+    'TypeScript',
+    'React',
+    'React Native',
+    'Rust',
+    'AI applications',
+    'Growth engineering',
+  ],
   links: {
     website: 'https://harrisonrogers.dev',
     github: socialLinks.github,

@@ -1,5 +1,15 @@
 export const projects = [
   {
+    title: 'Port-Generator',
+    description: 'Portfolio generator built in a weekend',
+    details:
+      'Portfolio generator built in a weekend where you paste your Github and can add a few facts about yourself and it will generate a portfolio for you.',
+    video: '/port-generator.mov',
+    url: 'https://port-generator.vercel.app/',
+    sourceCode: 'https://github.com/HarrisonRogers/port-generator',
+    personal: true,
+  },
+  {
     title: 'Crypto Spy',
     description: 'Crypto tracker chrome extension',
     details:
@@ -13,7 +23,7 @@ export const projects = [
     title: 'Arbitrage Polymarket Bot',
     description: 'Trades 15 minute crypto markets on polymarket',
     details:
-      'An automated trading experiment that looks for pricing opportunities across Polymarket\'s short-duration crypto markets.',
+      "An automated trading experiment that looks for pricing opportunities across Polymarket's short-duration crypto markets.",
     url: '',
     sourceCode: 'https://github.com/HarrisonRogers/arbitrage-polymarket',
     personal: true,

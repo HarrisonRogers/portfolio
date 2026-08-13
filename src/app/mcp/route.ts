@@ -23,7 +23,7 @@ const tools = [
     name: 'get_profile',
     title: 'Get Harrison Rogers profile',
     description:
-      'Return Harrison Rogers\' public professional profile, skills, and contact links.',
+      "Return Harrison Rogers' public professional profile, current Frontend/Growth Developer role at First Table, skills, about text, and contact links.",
     inputSchema: { type: 'object', additionalProperties: false },
     annotations: {
       readOnlyHint: true,

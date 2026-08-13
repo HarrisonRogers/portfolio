@@ -1,6 +1,6 @@
 # Harrison Rogers Developer API and MCP Reference
 
-Harrison Rogers is an AI Integrated Software Engineer based in New Zealand. His public portfolio is https://harrisonrogers.dev.
+Harrison Rogers is an AI Integrated Software Engineer based in New Zealand and a Frontend/Growth Developer at First Table. He builds full-stack apps in TypeScript, React, React Native, and Rust, and contributes to startups through software engineering and growth engineering. His public portfolio is https://harrisonrogers.dev.
 
 All API and MCP operations documented here are public, free, read-only, and require no authentication. REST responses are JSON and permit cross-origin GET requests.
 
@@ -14,11 +14,11 @@ Returns the API directory with links to the documentation, OpenAPI specification
 
 ### GET /api/profile
 
-Returns Harrison Rogers' professional profile, role, New Zealand location, summary, skills, website, GitHub, LinkedIn, X, and email address.
+Returns Harrison Rogers' professional profile, including role, current Frontend/Growth Developer position at First Table, New Zealand location, summary, about text, skills, website, GitHub, LinkedIn, X, and email address.
 
 ### GET /api/projects
 
-Returns all public portfolio projects and a result count. Each project may include a title, description, website URL, source-code URL, and a personal-project flag.
+Returns all public portfolio projects and a result count, including Port-Generator and other personal and professional work. Each project includes a title, short description, longer details, website URL, source-code URL, and a personal-project flag. Some projects also include a demo video path.
 
 Optional query parameter:
 

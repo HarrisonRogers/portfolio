@@ -6,10 +6,8 @@ import { metaData } from './config';
 export default function Home() {
   return (
     <div>
-      <h1 className="font-instrument-serif text-6xl tracking-wide">
-        Hey, I&apos;m
-        <br />
-        {metaData.name}
+      <h1 className="font-instrument-serif text-6xl tracking-wide text-center sm:text-left">
+        Hey, I&apos;m {metaData.name}
       </h1>
       <Link href="/about">
         <div className="w-48 h-48 overflow-hidden rounded-full mx-auto sm:float-right sm:ml-5 sm:mb-5 lg:mt-2 mt-5 lg:mb-5 mb-10 hover:scale-105 transition-all duration-300 relative">
@@ -30,12 +28,12 @@ export default function Home() {
       </Link>
 
       <p className="mt-7">
-        I&apos;m an AI Integrated Software Engineer with a full-stack
-        background, specializing in TypeScript, React, React Native and Rust.
+        I&apos;m an AI Integrated Software Engineer building full-stack apps, in
+        TypeScript, React, React Native and Rust.
       </p>
       <p className="mt-5">
-        I am a passionate AI tinkerer and am constantly building and toying with
-        the latest and greatest features and AI tools.
+        I contribute and build startups to help grow them through software
+        engineering and growth engineering.
       </p>
     </div>
   );

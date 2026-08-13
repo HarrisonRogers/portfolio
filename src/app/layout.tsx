@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: '%s | Harrison Rogers',
   },
   description:
-    'Hi, I am Harrison Rogers an AI Integrated Software Engineer based in New Zealand. I love building AI, Web and Ios applications.',
+    'Harrison Rogers is an AI Integrated Software Engineer building full-stack apps in TypeScript, React, React Native, and Rust. He contributes to startups through software engineering and growth engineering.',
   authors: [{ name: 'Harrison Rogers', url: metaData.baseUrl }],
   creator: 'Harrison Rogers',
   keywords: [
@@ -44,6 +44,8 @@ export const metadata: Metadata = {
     'New Zealand developer',
     'Harrison Rogers API',
     'Harrison Rogers MCP server',
+    'growth engineering',
+    'Port-Generator',
   ],
   openGraph: {
     type: 'profile',
@@ -67,6 +69,11 @@ const structuredData = {
       url: 'https://harrisonrogers.dev',
       image: 'https://harrisonrogers.dev/harrison.jpeg',
       jobTitle: 'AI Integrated Software Engineer',
+      worksFor: {
+        '@type': 'Organization',
+        name: 'First Table',
+        url: 'https://www.firsttable.com',
+      },
       homeLocation: { '@type': 'Country', name: 'New Zealand' },
       sameAs: [socialLinks.github, socialLinks.linkedin, socialLinks.twitter],
     },

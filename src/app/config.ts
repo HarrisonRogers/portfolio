@@ -1,9 +1,10 @@
 export const metaData = {
   baseUrl: 'https://harrisonrogers.dev/',
   title: 'Harrison Rogers',
-  name: 'Harrison Rogers',
+  name: 'Harrison',
   ogImage: '/harrison.jpeg',
-  description: 'Harrison Rogers Software Engineer Portfolio',
+  description:
+    'AI Integrated Software Engineer building full-stack apps in TypeScript, React, React Native, and Rust.',
 };
 
 export const socialLinks = {

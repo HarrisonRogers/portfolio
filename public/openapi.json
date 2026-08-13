@@ -54,7 +54,7 @@
       "get": {
         "operationId": "getProfile",
         "summary": "Get Harrison Rogers' profile",
-        "description": "Returns Harrison Rogers' public professional profile, skills, and contact links.",
+        "description": "Returns Harrison Rogers' public professional profile, current Frontend/Growth Developer role at First Table, skills, about text, and contact links.",
         "tags": ["Portfolio"],
         "responses": {
           "200": {
@@ -180,7 +180,10 @@
           "name": { "type": "string", "example": "Harrison Rogers" },
           "role": { "type": "string", "example": "AI Integrated Software Engineer" },
           "location": { "type": "string", "example": "New Zealand" },
+          "currentRole": { "type": "string", "example": "Frontend/Growth Developer" },
+          "currentCompany": { "type": "string", "example": "First Table" },
           "summary": { "type": "string" },
+          "about": { "type": "string" },
           "skills": {
             "type": "array",
             "items": { "type": "string" }
@@ -200,10 +203,12 @@
       },
       "Project": {
         "type": "object",
-        "required": ["title", "description", "url", "sourceCode", "personal"],
+        "required": ["title", "description", "details", "url", "sourceCode", "personal"],
         "properties": {
-          "title": { "type": "string" },
+          "title": { "type": "string", "example": "Port-Generator" },
           "description": { "type": "string" },
+          "details": { "type": "string", "description": "Longer project description shown in the portfolio." },
+          "video": { "type": "string", "description": "Relative path to a project demo video when available." },
           "url": { "type": "string", "description": "Project URL or an empty string when no public URL is available." },
           "sourceCode": { "type": "string", "description": "Source-code URL or an empty string for private projects." },
           "personal": { "type": "boolean" }

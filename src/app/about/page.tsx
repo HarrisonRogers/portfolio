@@ -48,13 +48,11 @@ function AboutPage() {
           >
             First Table
           </a>{' '}
-          as a Frontend Developer. I love building whatever interests me,
+          as a Frontend/Growth Developer. I love building whatever interests me,
           whether that is a web app, mobile app, trading bots or ai
           applications/automations.
         </p>
-        <p>
-          When I am creating and tinkering I tend to use the tech stack below.
-        </p>
+        <p>When I am building I tend to use the tech stack below.</p>
       </article>
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <TechStackCard

@@ -1,6 +1,6 @@
 # Harrison Rogers
 
-> Harrison Rogers is a New Zealand AI Integrated Software Engineer. harrisonrogers.dev is his public portfolio and provides a read-only REST API and MCP server for agents to retrieve his professional profile, projects, and career history.
+> Harrison Rogers is a New Zealand AI Integrated Software Engineer and Frontend/Growth Developer at First Table. He builds full-stack apps, startups, trading bots, and AI automations. harrisonrogers.dev is his public portfolio and provides a read-only REST API and MCP server for agents to retrieve his professional profile, projects, and career history.
 
 ## Developer resources
 

@@ -12,7 +12,8 @@ const endpoints = [
   {
     method: 'GET',
     path: '/api/profile',
-    description: 'Public professional profile, skills, and contact links.',
+    description:
+      'Public professional profile, current role, skills, about text, and contact links.',
   },
   {
     method: 'GET',

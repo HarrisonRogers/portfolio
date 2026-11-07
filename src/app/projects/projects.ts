@@ -1,5 +1,25 @@
 export const projects = [
   {
+    title: 'MetroLord',
+    description: '3D pixel city where you can lease a building',
+    details:
+      'An explorable 3D pixel city where companies lease buildings and put up their own signs, with traffic and a skyline generated in the browser.',
+    video: '/metrolord-video.mp4',
+    url: 'https://www.metrolord.com/',
+    sourceCode: '',
+    personal: true,
+  },
+  {
+    title: 'Tacendo AI',
+    description: 'Private AI chat',
+    details:
+      'A private AI chat app that needs no email or name. You can try a few messages for free, then sign in with a Solana wallet, and chats stay in your browser by default.',
+    video: '/tacendo.mov',
+    url: 'https://www.tacendo.com/',
+    sourceCode: '',
+    personal: true,
+  },
+  {
     title: 'Port-Generator',
     description: 'Portfolio generator built in a weekend',
     details:
@@ -46,25 +66,6 @@ export const projects = [
     url: 'https://www.firsttable.co.nz/',
     sourceCode: '',
     personal: false,
-  },
-  {
-    title: 'Launch Base Tokens',
-    description: 'Launch sepolia base crypto tokens',
-    details:
-      'A simple web app for creating and launching test tokens on the Base Sepolia network through a guided interface.',
-    video: '/launch-base.mov',
-    url: 'https://launch-base-tokens.vercel.app/',
-    sourceCode: 'https://github.com/HarrisonRogers/launch-base-tokens',
-    personal: true,
-  },
-  {
-    title: 'Eth Blogs',
-    description: 'Write blogs and set subscription fees with base',
-    details:
-      'An onchain publishing prototype where writers can create posts and set subscription fees using the Base network.',
-    url: '',
-    sourceCode: 'https://github.com/HarrisonRogers/eth-blogs',
-    personal: true,
   },
 ];
 
